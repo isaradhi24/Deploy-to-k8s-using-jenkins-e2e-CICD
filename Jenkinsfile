@@ -1,6 +1,6 @@
 ### Define and and Tools #####
 pipeline {
-  aegent { lable 'Jenkins-Agent' }
+  agent { label 'Jenkins-Agent' }
   tools {
     jdk 'Java17'
     maven 'Maven3'   
@@ -13,7 +13,7 @@ pipeline {
     }
     stage("Git checkout"){
           steps{
-            git branth: 'main', credentialsId: 'github', url: 'https://github.com/isaradhi24/Deploy-to-k8s-using-jenkins-e2e-CICD'
+            git branch: 'main', credentialsId: 'github', url: 'https://github.com/isaradhi24/Deploy-to-k8s-using-jenkins-e2e-CICD'
           }
     }
     stage("Building Application"){
@@ -26,10 +26,8 @@ pipeline {
         sh "mvn test"
       }
     }
-    state (""){
+    stage (""){
       
     }
   }
-
-
-
+}
