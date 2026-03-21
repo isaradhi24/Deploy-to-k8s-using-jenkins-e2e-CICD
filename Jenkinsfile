@@ -1,4 +1,4 @@
-### Define and and Tools #####
+
 pipeline {
   agent { label 'Jenkins-Agent' }
   tools {
